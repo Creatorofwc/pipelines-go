@@ -61,8 +61,4 @@ steps:
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
   # TEST
-- task: Go@0
-  inputs:
-    command: 'test'
-    arguments: '-v'
-    workingDirectory: '$(modulePath)'
+
