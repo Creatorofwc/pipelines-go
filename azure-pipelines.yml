@@ -18,7 +18,7 @@ variables:
 steps:
 - task: GoTool@0
   inputs:
-    version: '1.11'
+    version: '1.13.5'
 - task: Go@0
   inputs:
     command: 'get'
@@ -61,4 +61,8 @@ steps:
   workingDirectory: '$(modulePath)'
   displayName: 'Get dependencies, then build'
   # TEST
-
+- task: Go@0
+  inputs:
+    command: 'test'
+    arguments: '-v'
+    workingDirectory: '$(modulePath)'
