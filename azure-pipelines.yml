@@ -21,6 +21,11 @@ steps:
     version: '1.17'
 - task: Go@0
   inputs:
+    command: 'custom'
+    customCommand: 'mod'
+    arguments: 'init'
+- task: Go@0
+  inputs:
     command: 'get'
     arguments: '-d'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
