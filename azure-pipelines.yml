@@ -21,7 +21,7 @@ variables:
 steps:
 - task: GoTool@0
   inputs:
-    version: '1.17'
+    version: '1.20'
 - task: Go@0
   inputs:
     command: 'custom'
