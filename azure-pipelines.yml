@@ -11,9 +11,16 @@ pool:
 
 variables:
   GOBIN:  '$(GOPATH)/bin' # Go binaries path
-#   GOROOT: '/usr/local/go1.11' # Go installation path
+  GOROOT: '/usr/local/go1.11' # Go installation path
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
-#   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
+#  modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
+
+- task: Go@0
+  inputs:
+    command: 'custom'
+    customCommand: 'mod'
+    arguments: 'init'
+    workingDirectory: '$(GOPATH)/src/github.com/$(build.repository.name)'
 
 # variables:
 #    imageName: 'pipelines-go'
