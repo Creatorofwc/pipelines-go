@@ -27,7 +27,7 @@ steps:
      command: 'custom'
      customCommand: 'mod'
      arguments: 'init'
-     workingDirectory: 'gopath'
+     workingDirectory: '$(system.defaultWorkingDirectory)/gopath'
  - task: Go@0
    inputs:
      command: 'get'
