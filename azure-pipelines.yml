@@ -19,24 +19,24 @@ variables:
    imageName: 'pipelines-go'
 
 steps:
-# - task: GoTool@0
-#   inputs:
-#     version: '1.17'
-# - task: Go@0
-#   inputs:
-#     command: 'custom'
-#     customCommand: 'mod'
-#     arguments: 'init'
-# - task: Go@0
-#   inputs:
-#     command: 'get'
-#     arguments: '-d'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)'
+ - task: GoTool@0
+   inputs:
+     version: '1.17'
+ - task: Go@0
+   inputs:
+     command: 'custom'
+     customCommand: 'mod'
+     arguments: 'init'
+ - task: Go@0
+   inputs:
+     command: 'get'
+     arguments: '-d'
+     workingDirectory: '$(System.DefaultWorkingDirectory)'
   # BUILD
-# - task: Go@0
-#   inputs:
-#     command: 'build'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)'
+ - task: Go@0
+   inputs:
+     command: 'build'
+     workingDirectory: '$(System.DefaultWorkingDirectory)'
 # - task: CopyFiles@2
 #   inputs:
 #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
@@ -75,8 +75,8 @@ steps:
 #     arguments: '-v'
 #     workingDirectory: '$(modulePath)'
 
-- task: Docker@2
-  inputs:
-    repository: '$(imageName)'
-    command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+# - task: Docker@2
+#   inputs:
+#     repository: '$(imageName)'
+#     command: 'buildAndPush'
+#     Dockerfile: 'Dockerfile'
